@@ -43,7 +43,28 @@ namespace CorePortfolio01_JeffPaltridge
 
             String Principle, Interest, Years;
 
-            double Amort, Rate, numPayments, amountPerMonth, 
+            double amortInput, rateInput, numPayments, amountPerMonth;
+
+            Console.Write("\t*************************************\n");
+            Console.Write("\t*                                   *\n");
+            Console.Write("\t*  Amortization Payment Calculator  *\n");
+            Console.Write("\t*                                   *\n");
+            Console.Write("\t*************************************\n");
+            Console.WriteLine("\n\tThis Program is used to Calculate the Monthly Payments of a Loan.\n");
+            
+            Console.Write("Enter the Principle amount of the loan: ");
+            Principle = Console.ReadLine();
+            amortInput = double.Parse(Principle);
+
+            Console.Write("\nEnter the Annual interest rate in percentage: ");
+            Interest = Console.ReadLine();
+            rateInput = Double.Parse(Interest);
+
+
+            Console.Write("\nEnter the number of Years: ");
+            Years = Console.ReadLine();
+
+            
 
 
         }
