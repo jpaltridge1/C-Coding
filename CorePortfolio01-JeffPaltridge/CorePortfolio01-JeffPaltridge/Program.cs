@@ -60,7 +60,7 @@ namespace CorePortfolio01_JeffPaltridge
             Console.Write("\nEnter the Annual interest rate in percentage: ");
             interestInput = Console.ReadLine();
             Rate = Double.Parse(interestInput);
-            monthlyInterest = ((Rate / MonthsinYear / 100);
+            monthlyInterest = ((Rate / MonthsinYear / 100));
 
 
             Console.Write("\nEnter the number of Years: ");
