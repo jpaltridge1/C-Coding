@@ -16,12 +16,12 @@ namespace evenodd
 
             string inputNumber;
             int testNumber, resultNumber;
-
+            const int Two = 2;
             Console.Write("Please enter a Whole Number: ");
             inputNumber = Console.ReadLine();
             testNumber = int.Parse(inputNumber);
 
-            resultNumber = (testNumber % 2);
+            resultNumber = (testNumber % Two);
 
 
             if (resultNumber == 0)

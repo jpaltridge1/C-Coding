@@ -18,8 +18,11 @@ namespace Decision1
             Console.Write("Enter the First Number: ");
             inputValue = Console.ReadLine();
 
-            first = int.Parse(inputValue);
-            
+            if (!int.TryParse(inputValue, out first))
+            {
+
+                Console.WriteLine("You did not enter a number. you entered a Letter please restart.");
+            }
             // reused the inputValue because previous value was stored elsewhere
 
             Console.Write("\nEnter the Second Number: ");
@@ -42,11 +45,7 @@ namespace Decision1
                 Console.WriteLine($"The Highest Number between {first} and {second} is {highest} which was the {message} number input !");
                 Console.WriteLine($"First = {first}, Second = {second}, the {message} number entered had the higher value of : {highest}");
                 Console.ReadKey();
-
-            }
-            
-
-           
+             }
         }
     }
 }

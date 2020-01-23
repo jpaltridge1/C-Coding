@@ -42,8 +42,9 @@ namespace CorePortfolio01_JeffPaltridge
             // A = P((r(Math.Pow((1 + r), n))) / (Math.Pow((1 + r), n) - 1));
 
             String principleInput, interestInput, yearsInput;
-
-            double Principle, Rate, numPayments, amountPerMonth, monthlyInterest;
+            int Years, numPayments;
+            double Principle, Rate, amountPerMonth, monthlyInterest;
+            const int MonthsinYear = 12;
 
             Console.Write("\t*************************************\n");
             Console.Write("\t*                                   *\n");
@@ -59,11 +60,18 @@ namespace CorePortfolio01_JeffPaltridge
             Console.Write("\nEnter the Annual interest rate in percentage: ");
             interestInput = Console.ReadLine();
             Rate = Double.Parse(interestInput);
-            monthlyInterest = ((Rate / 12) / 100);
+            monthlyInterest = ((Rate / monthsinYear / 100);
 
 
             Console.Write("\nEnter the number of Years: ");
             yearsInput = Console.ReadLine();
+            Years = int.Parse(yearInput);
+            numPayments = Years * 12;
+
+            amountPerMonth = Principle((monthlyInterest(Math.Pow(1 + monthlyInterest), numPayments)) / (Math.Pow((1 + monthlyInterest), numPayments) - 1));
+
+
+
 
             
 
