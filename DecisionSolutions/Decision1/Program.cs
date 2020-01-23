@@ -31,7 +31,7 @@ namespace Decision1
                 highest = first;
                 message = "first";
                 Console.WriteLine($"The Highest Number between {first} and {second} is {highest} which was the {message} number input !");
-
+                Console.WriteLine($"First = {first}, Second = {second}, the {message} number entered had the higher value of : {highest}");
             }
 
             else
@@ -39,7 +39,7 @@ namespace Decision1
                 highest = second;
                 message = "second";
                 Console.WriteLine($"The Highest Number between {first} and {second} is {highest} which was the {message} number input !");
-
+                Console.WriteLine($"First = {first}, Second = {second}, the {message} number entered had the higher value of : {highest}");
             }
             
 
