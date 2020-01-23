@@ -41,9 +41,9 @@ namespace CorePortfolio01_JeffPaltridge
             // rate /12 /100 to get proper %
             // A = P((r(Math.Pow((1 + r), n))) / (Math.Pow((1 + r), n) - 1));
 
-            String Principle, Interest, Years;
+            String principleInput, interestInput, yearsInput;
 
-            double amortInput, rateInput, numPayments, amountPerMonth;
+            double Principle, Rate, numPayments, amountPerMonth, monthlyInterest;
 
             Console.Write("\t*************************************\n");
             Console.Write("\t*                                   *\n");
@@ -53,16 +53,17 @@ namespace CorePortfolio01_JeffPaltridge
             Console.WriteLine("\n\tThis Program is used to Calculate the Monthly Payments of a Loan.\n");
             
             Console.Write("Enter the Principle amount of the loan: ");
-            Principle = Console.ReadLine();
-            amortInput = double.Parse(Principle);
+            principleInput = Console.ReadLine();
+            Principle = double.Parse(principleInput);
 
             Console.Write("\nEnter the Annual interest rate in percentage: ");
-            Interest = Console.ReadLine();
-            rateInput = Double.Parse(Interest);
+            interestInput = Console.ReadLine();
+            Rate = Double.Parse(interestInput);
+            monthlyInterest = ((Rate / 12) / 100);
 
 
             Console.Write("\nEnter the number of Years: ");
-            Years = Console.ReadLine();
+            yearsInput = Console.ReadLine();
 
             
 
