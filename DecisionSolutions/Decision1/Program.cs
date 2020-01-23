@@ -1,0 +1,49 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Decision1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int first, second, highest;
+
+            String message;
+            string inputValue;
+
+            Console.Write("Enter the First Number: ");
+            inputValue = Console.ReadLine();
+
+            first = int.Parse(inputValue);
+            
+            // reused the inputValue because previous value was stored elsewhere
+
+            Console.Write("\nEnter the Second Number: ");
+            inputValue = Console.ReadLine();
+            second = int.Parse(inputValue);
+
+            if (first > second)
+            {
+                highest = first;
+                message = "first";
+                Console.WriteLine($"The Highest Number between {first} and {second} is {highest} which was the {message} number input !");
+
+            }
+
+            else
+            {
+                highest = second;
+                message = "second";
+                Console.WriteLine($"The Highest Number between {first} and {second} is {highest} which was the {message} number input !");
+
+            }
+            
+
+           
+        }
+    }
+}
