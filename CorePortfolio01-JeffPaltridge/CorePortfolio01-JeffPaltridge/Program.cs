@@ -42,9 +42,9 @@ namespace CorePortfolio01_JeffPaltridge
             // A = P((r(Math.Pow((1 + r), n))) / (Math.Pow((1 + r), n) - 1));
 
             String principleInput, interestInput, yearsInput;
-            int Years, numPayments;
-            double Principle, Rate, amountPerMonth, monthlyInterest;
-            const int MonthsinYear = 12;
+            
+            double Principle, Rate, amountPerMonth, monthlyInterest, Years, numPayments;
+            const double MonthsinYear = 12;
 
             Console.Write("\t*************************************\n");
             Console.Write("\t*                                   *\n");
@@ -57,24 +57,26 @@ namespace CorePortfolio01_JeffPaltridge
             principleInput = Console.ReadLine();
             Principle = double.Parse(principleInput);
 
-            Console.Write("\nEnter the Annual interest rate in percentage: ");
+            Console.Write("Enter the Annual interest rate in percentage: ");
             interestInput = Console.ReadLine();
             Rate = Double.Parse(interestInput);
             monthlyInterest = ((Rate / MonthsinYear / 100));
 
 
-            Console.Write("\nEnter the number of Years: ");
+            Console.Write("Enter the number of Years to pay off the loan: ");
             yearsInput = Console.ReadLine();
-            Years = int.Parse(yearsInput);
-            numPayments = Years * 12;
+            Years = double.Parse(yearsInput);
+            numPayments = Years * MonthsinYear;
 
             amountPerMonth = Principle * ((monthlyInterest * (Math.Pow((1 + monthlyInterest), numPayments)) / (Math.Pow((1 + monthlyInterest), numPayments) - 1)));
 
 
-
-
-            
-
+            Console.Write($"\nMonthly payment amount is: \t${amountPerMonth:0.00}");
+            Console.Write($"\nThe Principle amount is: \t${Principle:0.00}");
+            Console.Write($"\nAnnual interest: \t\t{Rate:0.0}%");
+            Console.Write($"\nNumber of payments: \t\t{numPayments}");
+            Console.Write($"\nNumber of years: \t\t{Years}\n");
+            Console.ReadKey();
 
         }
     }
