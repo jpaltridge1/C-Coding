@@ -133,88 +133,117 @@ namespace PracticeQuestions
 
             //Question 3
 
-            string studentName, markInput;
-            string grade = "Blank";
-            double mark;
+            //string studentName, markInput;
+            //string grade = "Blank";
+            //double mark;
 
-            Console.Write("Please Enter Student Name: ");
-            studentName = Console.ReadLine();
+            //Console.Write("Please Enter Student Name: ");
+            //studentName = Console.ReadLine();
+
+            //Console.Write($"Please Enter the Mark for {studentName}: ");
+            //markInput = Console.ReadLine();
+            //mark = double.Parse(markInput);
+
+            //if (mark >= 90 && mark <= 100)
+            //{
+            //    grade = "A";
+            //}
+
+            //else if (mark >= 80 && mark <= 89)
+            //{
+            //    grade = "B";
+            //}
+
+            //else if (mark >= 70 && mark <= 79)
+            //{
+            //    grade = "C";
+            //}
+
+            //else if (mark >= 50 && mark <= 69)
+            //{
+            //    grade = "D";
+            //}
+
+            //else if (mark >= 0 && mark <= 49)
+            //{
+            //    grade = "F";
+            //}
+
+            //else
+            //{
+            //    grade = "Invaild";
+            //}
+
+            //switch (grade)
+            //{
+            //    case "A":
+            //        {
+            //            Console.WriteLine($"The student {studentName} has a grade of {grade}.");
+            //        }
+            //        break;
+
+            //    case "B":
+            //        {
+            //            Console.WriteLine($"The student {studentName} has a grade of {grade}.");
+            //        }
+            //        break;
+
+            //    case "C":
+            //        {
+            //            Console.WriteLine($"The student {studentName} has a grade of {grade}.");
+            //        }
+            //        break;
+
+            //    case "D":
+            //        {
+            //            Console.WriteLine($"The student {studentName} has a grade of {grade}.");
+            //        }
+            //        break;
+
+            //    case "F":
+            //        {
+            //            Console.WriteLine($"The student {studentName} has a grade of {grade}.");
+            //        }
+            //        break;
+
+            //    case "Invaild":
+            //        {
+            //            Console.WriteLine("You have entered an Invaid Mark!");
+            //        }
+            //        break;
+            //}//eos
+
+            //Console.ReadKey();
+
+            // End of Question 3
+
+
+            //Question 4
+
+            string incomeInput;
+            string taxBracket = "Null";
+            double income, taxOwed;
+
+            const double bracket1 = 0.05;
+            const double bracket2 = 0.07;
+            const double bracket3 = 0.09;
+            const double low = 0;
+            const double fifty = 50000;
+            const double hundred = 100000;
             
-            Console.Write($"Please Enter the Mark for {studentName}: ");
-            markInput = Console.ReadLine();
-            mark = double.Parse(markInput);
+            Console.Write("Enter Income: ");
+            incomeInput = Console.ReadLine();
+            income = double.Parse(incomeInput);
 
-            if (mark >= 90 && mark <= 100)
+            if (income >= low && income <= fifty) ;
             {
-                grade = "A";
+                taxBracket = "Low";
             }
 
-            else if (mark >= 80 && mark <= 89)
+            else if (income > fifty && income< hundred)
             {
-                grade = "B";
+                taxBracket = "Middle";
             }
-
-            else if (mark >= 70 && mark <= 79)
-            {
-                grade = "C";
-            }
-
-            else if (mark >= 50 && mark <= 69)
-            {
-                grade = "D";
-            }
-
-            else if (mark >= 0 && mark <= 49)
-            {
-                grade = "F";
-            }
-
-            else
-            {
-                grade = "Invaild";
-            }
-
-            switch (grade)
-            {
-                case "A":
-                    {
-                        Console.WriteLine($"The student {studentName} has a grade of {grade}.");
-                    }
-                    break;
-
-                case "B":
-                    {
-                        Console.WriteLine($"The student {studentName} has a grade of {grade}.");
-                    }
-                    break;
-
-                case "C":
-                    {
-                        Console.WriteLine($"The student {studentName} has a grade of {grade}.");
-                    }
-                    break;
-
-                case "D":
-                    {
-                        Console.WriteLine($"The student {studentName} has a grade of {grade}.");
-                    }
-                    break;
-
-                case "F":
-                    {
-                        Console.WriteLine($"The student {studentName} has a grade of {grade}.");
-                    }
-                    break;
-
-                case "Invaild":
-                    {
-                        Console.WriteLine("You have entered an Invaid Mark!");
-                    }
-                    break;
-            }//eos
-
-            Console.ReadKey();
-
         }
     }
 }
