@@ -33,11 +33,13 @@ namespace CorePortfolio02_JeffPaltridge
              *              
              *              
              * Author: Jeff Paltridge
-             * Last modified: 2020.02.03 
+             * Last modified: 2020.02.05 
              */
 
             string inputWeight, deliveryInput;
-            double totalWeight, totalGst, totalCost, deliveryCost, gravelCost, gravelPrice;
+            double deliveryCost = 0;
+            string deliveryMsg = " ";
+            double totalWeight, totalGst, totalCost, gravelCost, gravelPrice;
             
             const double PRICE1 = 0.55;
             const double PRICE2 = 0.45;
@@ -53,7 +55,8 @@ namespace CorePortfolio02_JeffPaltridge
             const double WEIGHT5 = 5000;
             const double DELIVERYFEE = 0.03;
             const double DELIVERYDEFAULT = 0.00;
-            Console.WriteLine("Welcome to stoney Gravel Pit!");
+
+            Console.WriteLine("Welcome to Stoney Gravel Pit!");
             Console.WriteLine();
             
             Console.Write("Please enter the weight of gravel required: ");
@@ -89,36 +92,54 @@ namespace CorePortfolio02_JeffPaltridge
                 gravelPrice = PRICE6;            
             }
 
+            gravelCost = totalWeight * gravelPrice;
+
             Console.Write("Do you require delivery (Y/N)? ");
             deliveryInput = Console.ReadLine();
+            
+
             Console.WriteLine();
             Console.WriteLine($"The charge for {totalWeight:0} lb of gravel is ${gravelPrice:0.00} per lb.");
 
-            switch (deliveryInput)
+
+            
+            switch (deliveryInput.ToUpper())
             {
 
-
-                case (deliveryInput.ToUpper)"Y":
-                    {
-                        deliveryCost = gravelPrice * DELIVERYFEE;
-                    }
-                
-                case (deliveryInput.ToUpper) != "Y"
+                case "Y":
                     {
                         if (totalWeight <= 4800)
-                        { 
-                            deliveryCost = DELIVERYDEFAULT; 
-                            
+                        {
+                            deliveryCost = gravelCost * DELIVERYFEE;
                         }
-                    }
 
+                        else
+                        {
+                            deliveryCost = DELIVERYDEFAULT;
+                            deliveryMsg = "(free delivery)";
+                        }
+
+                    }
+                    break;
+
+                default:
+                    break;
             }//eos
 
-
-           
+          
+            totalGst = (gravelCost + deliveryCost) * GST;
+            totalCost = gravelCost + deliveryCost + totalGst;
             Console.WriteLine();
+            Console.WriteLine("Subtotal:{0,27:$0.00}", gravelCost);
+            Console.WriteLine("Delivery:{0,27:$0.00} {1}", deliveryCost, deliveryMsg);
+            Console.WriteLine("GST:{0,32:$0.00}", totalGst);
+            Console.WriteLine("------------------------------------");
+            Console.WriteLine("Total:{0,30:$0.00}", totalCost);
+            Console.WriteLine();
+            Console.WriteLine("Thank you for your purchase! We hope your day rocks.");
 
 
+            Console.ReadKey();
 
         }
     }
