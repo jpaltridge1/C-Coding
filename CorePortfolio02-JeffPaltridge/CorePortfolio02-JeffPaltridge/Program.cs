@@ -130,11 +130,11 @@ namespace CorePortfolio02_JeffPaltridge
             totalGst = (gravelCost + deliveryCost) * GST;
             totalCost = gravelCost + deliveryCost + totalGst;
             Console.WriteLine();
-            Console.WriteLine("Subtotal:{0,27:$0.00}", gravelCost);
-            Console.WriteLine("Delivery:{0,27:$0.00} {1}", deliveryCost, deliveryMsg);
-            Console.WriteLine("GST:{0,32:$0.00}", totalGst);
-            Console.WriteLine("------------------------------------");
-            Console.WriteLine("Total:{0,30:$0.00}", totalCost);
+            Console.WriteLine("Subtotal:{0,13:$0.00}", gravelCost);
+            Console.WriteLine("Delivery:{0,13:$0.00} {1}", deliveryCost, deliveryMsg);
+            Console.WriteLine("GST:{0,18:$0.00}", totalGst);
+            Console.WriteLine("----------------------");
+            Console.WriteLine("Total:{0,16:$0.00}", totalCost);
             Console.WriteLine();
             Console.WriteLine("Thank you for your purchase! We hope your day rocks.");
 
