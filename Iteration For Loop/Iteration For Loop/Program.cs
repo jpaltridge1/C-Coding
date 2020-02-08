@@ -20,7 +20,7 @@ namespace Iteration_For_Loop
              *      Processing code block
              *    }
              *    
-             *    for(int counter:1; counter<stopNumber; counter ++)
+             *    for(int counter:1; counter<stopNumber; counter ++) // if end with a ; with stop the loop and treat the code block as a normal code block
              *    {
              *      codeblock
              *    }
