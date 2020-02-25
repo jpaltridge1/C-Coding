@@ -71,7 +71,7 @@ namespace methods
 
                     case "B":
                         {
-                            Heads_or_Tails_Game();
+                            Heads_or_Tails_Game();//calling statement
                             break;
                         }
 
@@ -95,7 +95,7 @@ namespace methods
             
 
         
-     static public void Heads_or_Tails_Game()
+     static public void Heads_or_Tails_Game()//method header
      {
 
         string inputString;
