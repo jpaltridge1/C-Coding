@@ -40,7 +40,11 @@ namespace methods
              *  [list of parameters] this is a set of local variables that will be used to recieve values from the calling statement
              *                  a parameter is a set of datatype variable name
              *                  parameters are separated by using a comma ,
-             *                  
+             *  do
+             *  {
+             * 
+             *  }while (menuOption.ToUpper() !="X");
+             * 
              * 
              */
 
@@ -51,9 +55,9 @@ namespace methods
             while (flag == false)
             {
                 Console.WriteLine("Select a Menu Option:");
-                Console.WriteLine("A) to Case A");
-                Console.WriteLine("B) to Case B");
-                Console.WriteLine("C) to Case C");
+                Console.WriteLine("A) Even or Odds Game");
+                Console.WriteLine("B) Heads or Tails Game");
+                Console.WriteLine("C) Sum of Squares");
                 Console.WriteLine("X) to Exit");
                 Console.Write("Please Enter your selection: ");
                 menuOption = Console.ReadLine();
@@ -64,7 +68,21 @@ namespace methods
 
                     case "A":
                         {
-                            Even_Or_Odds();
+
+                            string promptline = "\n\nPlease Enter a Whole Number or 0 to exit: ";
+
+                            int number = GetIntergerInput(promptline);
+
+                            if (number % 2 == 0)
+                            {
+                                Console.WriteLine($"\n\nThe number {number} is Even!\n\n");
+                            }
+
+                            else
+                            {
+                                Console.WriteLine($"\n\nThe number {number} is Odd!\n\n");
+                            }
+                           // Even_Or_Odds();
                             break;
                         }
 
@@ -78,13 +96,37 @@ namespace methods
 
                     case "C":
                         {
+
+                            //sum of squares
+                            //loop 4 times
+                            int number = GetIntergerInput("Enter a number greater than 0 : ");
+                           if (number < 1)
+                            {
+                                Console.WriteLine($"{number} is not greater than 0! Unable to do sum of Squares!");
+
+                            }
+
+                            else
+                            {
+                                int sumofsquares = 0;
+                                number = SumofSquaresMethod(number);
+                                Console.WriteLine($"{sumofsquares} is the sum of squares for {number}");
+
+                            }
+
                             break;
                         }
 
+                    case "X":
+                        {
+                            Console.WriteLine("Thank You for playing!");
+                            flag = true;
+                            break;
+                        }
 
                     default:
                         {
-                            flag = true;
+                            Console.WriteLine("You have Enter an Invaild Menu Selection! Please Retry.");
                             break;
                         }
 
@@ -117,10 +159,83 @@ namespace methods
         
      }
       
-        static public void Even_Or_Odds()
+        static public void Even_Or_Odds() //subroutine (does not return value)
         {
 
 
         }
+
+        /*
+         * Pass data into/return data from a method
+         * 
+         * local variables are not automatically passed to any called method
+         * 
+         * methodname(drivervariable, anothervariable)
+         *                  Arguments (calling statement name)
+         *                  
+         *        Pass by value          
+         *  methodname(int localcopyofDV, string localcopyofAV    )
+         *                      parameter (method version naming)
+         *                      locally declared (die at end of method)
+         *                      
+         *    for return data you must define datatype replace (void) with (return)
+         *    
+         *    
+         *    return datatypeof
+         *    
+         *    
+         * 
+         */
+
+
+           static public int GetIntergerInput(string promptline)
+           {
+            bool validFlag = false;
+            int number = 0;
+            do
+            {
+                Console.Write(promptline);
+                string inputString = Console.ReadLine();
+
+                if (int.TryParse(inputString, out number))
+                {
+                  validFlag = true;
+                }
+
+
+            } while (validFlag == false);
+
+            // if your method indicates that a return datatype is specified
+            // you must have at least 1 return statement in your method code
+
+            return number;
+
+           }
+    
+
+        static public int SumofSquaresMethod(int seednumber) //function (returns a value)
+        {
+            int finalsquare = 0;
+            for(int loopcounter = 1; loopcounter <= seednumber; loopcounter++)
+            {
+                finalsquare += loopcounter * loopcounter;
+
+            }
+
+
+
+            return finalsquare;
+        }
+
+
+        /*
+         * Method stub
+         *    static public int SumofSquaresMethod(int seednumber)
+         *    {
+         *    return 0;
+         *    }
+         *    
+         */
+
     }//eom
 }
