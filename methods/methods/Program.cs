@@ -221,9 +221,6 @@ namespace methods
                 finalsquare += loopcounter * loopcounter;
 
             }
-
-
-
             return finalsquare;
         }
 
