@@ -99,7 +99,7 @@ namespace methods
 
                             //sum of squares
                             //loop 4 times
-                            int number = GetIntergerInput("Enter a number greater than 0 : ");
+                            int number = GetIntergerInput("\n\nEnter a number greater than 0 : ");
                            if (number < 1)
                             {
                                 Console.WriteLine($"{number} is not greater than 0! Unable to do sum of Squares!");
@@ -109,8 +109,8 @@ namespace methods
                             else
                             {
                                 int sumofsquares = 0;
-                                number = SumofSquaresMethod(number);
-                                Console.WriteLine($"{sumofsquares} is the sum of squares for {number}");
+                                sumofsquares = SumofSquaresMethod(number);
+                                Console.WriteLine($"\n\nThe total of {sumofsquares} is the sum of squares for the number {number}! \n\n");
 
                             }
 
