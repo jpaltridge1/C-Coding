@@ -14,7 +14,7 @@ namespace CorePortfolio03_JeffPaltridge
              * 
              * Input: option selection, amount to depreciate, number of years to deprieciate 
              * 
-             * Process(s): loop, switch, method, if/else
+             * Process(s): loop, switch, method
              * 
              * Output: option menu, input queries, depreciation values 
              * 
