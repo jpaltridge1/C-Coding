@@ -141,15 +141,15 @@ namespace File_IO
             {
 
                 //this is used if you need to close a data source such as a data source such as a open file
-                reader.Close();
+                reader.Close(); 
+
             }
 
 
             Console.ReadKey();
 
 
-
-
+            //
         }
     }
 }
