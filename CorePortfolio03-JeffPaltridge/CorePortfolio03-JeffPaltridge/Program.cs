@@ -28,6 +28,8 @@ namespace CorePortfolio03_JeffPaltridge
             decimal amount = 0.0m;
             decimal year = 0.0m;
             string amountString, yearString;
+            bool amountBool = false;
+            bool yearBool = false;
 
             do
             {
@@ -45,14 +47,20 @@ namespace CorePortfolio03_JeffPaltridge
 
                     case "A":
                         {
-                            Console.Write("\nHow much money is to be Depriciated: ");
-                            amountString = Console.ReadLine();
-                            decimal.TryParse(amountString, out amount);
-                            Console.Write("Over How many Years? ");
-                            yearString = Console.ReadLine();
-                            decimal.TryParse(yearString, out year);
-                            Console.WriteLine();
+                            do
+                            {
+                                Console.Write("\nHow much money is to be Depriciated: ");
+                                amountString = Console.ReadLine();
+                                decimal.TryParse(amountString, out amount);
+                            } while (amountBool = false);
 
+                            do
+                            {
+                                Console.Write("Over How many Years? ");
+                                yearString = Console.ReadLine();
+                                decimal.TryParse(yearString, out year);
+                                Console.WriteLine();
+                            } while (yearBool = false);
                             break;
                         }
 
