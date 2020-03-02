@@ -25,9 +25,10 @@ namespace CorePortfolio03_JeffPaltridge
              */
 
             string menuOption;
-            decimal amount = 0.0m;
-            decimal year = 0.0m;
-            string amountString, yearString;
+            decimal amount = 0.5m;
+            decimal year = 0.5m;
+            string amountString = ""; 
+            string yearString = "";
             bool amountBool = false;
             bool yearBool = false;
 
@@ -47,20 +48,53 @@ namespace CorePortfolio03_JeffPaltridge
 
                     case "A":
                         {
-                            do
-                            {
-                                Console.Write("\nHow much money is to be Depriciated: ");
-                                amountString = Console.ReadLine();
-                                decimal.TryParse(amountString, out amount);
-                            } while (amountBool = false);
+                            
 
-                            do
+                            for (bool exitCounter = false; exitCounter != true)
                             {
-                                Console.Write("Over How many Years? ");
-                                yearString = Console.ReadLine();
-                                decimal.TryParse(yearString, out year);
-                                Console.WriteLine();
-                            } while (yearBool = false);
+                                do
+                                {
+                                    Console.Write("\nHow much money is to be Depriciated: ");
+                                    amountString = Console.ReadLine();
+
+                                    if (decimal.TryParse(amountString, out amount) && amount >= 0)
+                                    {
+                                        amountBool = true;
+                                    }
+
+                                    else
+                                    {
+                                        Console.WriteLine($"Invaild Value {amountString} . Try again or enter 0 to exit option! ");
+                                    };
+
+                                } while (amountBool == false);
+                                if (amountString == "0")
+                                {
+    
+                                }
+
+                            }
+
+                            for ()
+                            { 
+                                    do
+                                    {
+                                        Console.Write("Over How many Years? ");
+                                        yearString = Console.ReadLine();
+                                        if (decimal.TryParse(yearString, out year) && year > 0)
+                                        {
+                                            yearBool = true;
+                                        }
+                                        else
+                                        {
+                                            Console.WriteLine($"Invaild Value {amountString} . Try again or enter 0 to exit option! ");
+                                        }
+
+                                        Console.WriteLine();
+
+                                    } while (yearBool == false);
+           
+                            }
                             break;
                         }
 
