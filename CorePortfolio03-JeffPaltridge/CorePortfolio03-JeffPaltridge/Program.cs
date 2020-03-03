@@ -25,8 +25,8 @@ namespace CorePortfolio03_JeffPaltridge
              */
 
             string menuOption;
-            decimal amount = 0.5m;
-            decimal year = 0.5m;
+            decimal amount = 0m;
+            decimal year = 0m;
             string amountString = ""; 
             string yearString = "";
             bool amountBool = false;
@@ -50,7 +50,7 @@ namespace CorePortfolio03_JeffPaltridge
                         {
                             
 
-                            for (bool exitCounter = false; exitCounter != true)
+                            for (bool exitCounter = false; exitCounter != true; exitCounter = true)
                             {
                                 do
                                 {
@@ -70,30 +70,34 @@ namespace CorePortfolio03_JeffPaltridge
                                 } while (amountBool == false);
                                 if (amountString == "0")
                                 {
-    
+                                    exitCounter = true;
                                 }
 
                             }
 
-                            for ()
+                            for (bool exitCounter = false; exitCounter != true; exitCounter = true)
                             { 
                                     do
                                     {
                                         Console.Write("Over How many Years? ");
                                         yearString = Console.ReadLine();
-                                        if (decimal.TryParse(yearString, out year) && year > 0)
+                                        if (decimal.TryParse(yearString, out year) && year >= 0)
                                         {
                                             yearBool = true;
                                         }
                                         else
                                         {
-                                            Console.WriteLine($"Invaild Value {amountString} . Try again or enter 0 to exit option! ");
+                                            Console.WriteLine($"Invaild Value {yearString} . Try again or enter 0 to exit option! ");
                                         }
 
                                         Console.WriteLine();
 
                                     } while (yearBool == false);
-           
+
+                                if (yearString == "0")
+                                {
+                                    exitCounter = true;
+                                }
                             }
                             break;
                         }
