@@ -48,40 +48,43 @@ namespace CorePortfolio03_JeffPaltridge
 
                     case "A":
                         {
-                            
 
-                            for (bool exitCounter = false; exitCounter != true; exitCounter = true)
+                            bool exitCounter = false;
+
+                            while (exitCounter == false)
                             {
                                 do
                                 {
                                     Console.Write("\nHow much money is to be Depriciated: ");
                                     amountString = Console.ReadLine();
+                                    if (amountString != "0")
 
-                                    if (decimal.TryParse(amountString, out amount) && amount >= 0)
                                     {
-                                        amountBool = true;
-                                    }
+                                        if (decimal.TryParse(amountString, out amount) && amount >= 0)
+                                        {
+                                            amountBool = true;
+                                            exitCounter = true;
+                                        }
 
+                                        else
+                                        {
+                                            Console.WriteLine($"Invaild Value {amountString} . Try again or enter 0 to exit option! ");
+                                        };
+
+                                    }
                                     else
                                     {
-                                        Console.WriteLine($"Invaild Value {amountString} . Try again or enter 0 to exit option! ");
-                                    };
-
+                                        exitCounter = true;
+                                    }
                                 } while (amountBool == false);
-                                if (amountString == "0")
-                                {
-                                    exitCounter = true;
-                                }
 
                             }
 
-                            for (bool exitCounter = false; exitCounter != true; exitCounter = true)
-                            { 
-                                    do
+                                do
                                     {
                                         Console.Write("Over How many Years? ");
                                         yearString = Console.ReadLine();
-                                        if (decimal.TryParse(yearString, out year) && year >= 0)
+                                        if (decimal.TryParse(yearString, out year) && year > 0)
                                         {
                                             yearBool = true;
                                         }
@@ -98,7 +101,8 @@ namespace CorePortfolio03_JeffPaltridge
                                 {
                                     exitCounter = true;
                                 }
-                            }
+
+                        
                             break;
                         }
 
