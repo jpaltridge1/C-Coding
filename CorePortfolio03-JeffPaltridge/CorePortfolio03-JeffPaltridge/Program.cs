@@ -27,8 +27,8 @@ namespace CorePortfolio03_JeffPaltridge
             string menuOption;
             decimal amount = 0m;
             decimal year = 0m;
-            string amountString = ""; 
-            string yearString = "";
+            string amountString; 
+            string yearString;
             bool amountBool = false;
             bool yearBool = false;
 
@@ -60,10 +60,11 @@ namespace CorePortfolio03_JeffPaltridge
                                     if (amountString != "0")
 
                                     {
-                                        if (decimal.TryParse(amountString, out amount) && amount >= 0)
+
+                                        if (decimal.TryParse(amountString, out amount) && amount > 0)
                                         {
                                             amountBool = true;
-                                            exitCounter = true;
+                                            
                                         }
 
                                         else
@@ -75,35 +76,47 @@ namespace CorePortfolio03_JeffPaltridge
                                     else
                                     {
                                         exitCounter = true;
+                                        amountBool = true;
                                     }
                                 } while (amountBool == false);
 
-                            }
+                                if (exitCounter == false)
+                                {
 
-                                do
+                                    do
                                     {
                                         Console.Write("Over How many Years? ");
                                         yearString = Console.ReadLine();
-                                        if (decimal.TryParse(yearString, out year) && year > 0)
+
+                                        if (yearString != "0")
+                                        {
+
+                                            if (decimal.TryParse(yearString, out year) && year > 0)
+                                            {
+                                                yearBool = true;
+                                            }
+
+                                            else
+                                            {
+                                                Console.WriteLine($"Invaild Value {yearString} . Try again or enter 0 to exit option! ");
+                                            }
+                                        }
+
+                                        else
                                         {
                                             yearBool = true;
                                         }
-                                        else
-                                        {
-                                            Console.WriteLine($"Invaild Value {yearString} . Try again or enter 0 to exit option! ");
-                                        }
+
 
                                         Console.WriteLine();
 
                                     } while (yearBool == false);
-
-                                if (yearString == "0")
-                                {
-                                    exitCounter = true;
                                 }
-
-                        
+                                exitCounter = true;   
+                            }
+                            
                             break;
+                            
                         }
 
                     case "B":
