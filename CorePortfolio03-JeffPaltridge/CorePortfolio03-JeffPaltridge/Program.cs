@@ -114,9 +114,12 @@ namespace CorePortfolio03_JeffPaltridge
                                 }
                                 exitCounter = true;   
                             }
-                            
+
+                            amountBool = false;
+                            yearBool = false;
+
                             break;
-                            
+                           
                         }
 
                     case "B":
