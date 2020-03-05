@@ -78,7 +78,7 @@ namespace CorePortfolio03_JeffPaltridge
                                         exitCounter = true;
                                         amountBool = true;
                                     }
-                                } while (amountBool == false);
+                                } while (amountBool == false);//eow
 
                                 if (exitCounter == false)
                                 {
@@ -110,7 +110,7 @@ namespace CorePortfolio03_JeffPaltridge
 
                                         Console.WriteLine();
 
-                                    } while (yearBool == false);
+                                    } while (yearBool == false);//eow
                                 }
                                 exitCounter = true;   
                             }
