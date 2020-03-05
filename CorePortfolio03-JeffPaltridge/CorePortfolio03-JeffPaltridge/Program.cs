@@ -216,7 +216,7 @@ namespace CorePortfolio03_JeffPaltridge
                 Console.WriteLine("{0,6:0}{1,16:c}", depreciationCounter, depreciationAmount);
 
             }
-            Console.WriteLine();
+            Console.ReadKey();
 
         }
     }
