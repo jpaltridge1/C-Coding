@@ -149,7 +149,44 @@ namespace File_IO
             Console.ReadKey();
 
 
-            //
+            /*
+            StreamReader reader = null;
+
+            string Full_Path_File_Name = "";
+
+            OpenFileDialog fd = new OpenFileDialog();
+            fd.ShowDialog();
+            Full_Path_File_Name = fd.FileName;
+
+            string readValue = "";
+            int counter = 0;
+
+            try
+            {
+                reader = new StreamReader(Full_Path_File_Name);
+                readValue = reader.ReadLine();
+
+                while (readValue != null)
+                {
+                    counter++;
+                    Console.WriteLine($" File line {counter} has a value of {readValue}\n");
+
+                    readValue = reader.ReadLine();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                //.Message hold the error that occured durning the processing of the code in your try{....}
+                Console.WriteLine($"Error: {ex.Message}");
+            }
+            finally
+            {
+
+                //this is used if you need to close a data source such as a data source such as a open file
+                reader.Close();
+            }
+            */
         }
     }
 }
