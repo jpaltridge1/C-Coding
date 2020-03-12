@@ -76,7 +76,7 @@ namespace Arrayquestion4
 
                 index++;
             }
-            throw new NotImplementedException();
+            
         }
 
         static int ReadandLoadArray(int[] myArray, int physicalsize)
