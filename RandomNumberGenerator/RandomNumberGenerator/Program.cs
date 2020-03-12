@@ -8,6 +8,12 @@ namespace RandomNumberGenerator
 {
     class Program
     {
+        //if delcared outside of the method add the keyword static in front of your declaration
+        //if delcared outside of a method But within the class Then the variable is known to ALL Methods Without having to pass
+        //the value as a parameter
+
+            //static Random rnd = new Random();
+
         static void Main(string[] args)
         {
             /*
