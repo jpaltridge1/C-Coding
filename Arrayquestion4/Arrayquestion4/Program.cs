@@ -46,7 +46,7 @@ namespace Arrayquestion4
 
 
 
-               Console.WriteLine($"The average of the {logicalsize} numbers is {(double)sum / (double)logicalsize}");
+               Console.WriteLine($"The average of the {logicalsize} numbers is {(double)sum / (double)logicalsize:0.0}%.");
             }
             else
             {
