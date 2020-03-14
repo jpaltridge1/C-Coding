@@ -12,7 +12,11 @@ namespace CorePortfolio04_JeffPaltridge
         {
             
             int trackTotal;
-            
+            string drawTrackString = "";
+            string drawPlayerString = "-->";
+            string drawNPCString = "  *";
+
+
 
             Console.WriteLine("Welcome to the Unicorn Racing Game!");
             Console.WriteLine();
@@ -20,13 +24,24 @@ namespace CorePortfolio04_JeffPaltridge
 
             trackTotal = GetVailidPositiveInterger();
 
-            DrawTrack();
+            drawTrackString = DrawTrack(trackTotal);
 
-            DrawCharacters();
+            DrawCharacters(drawPlayerString, drawNPCString);
 
-            GenerateRandomDieValue();
+            Console.WriteLine($"   {drawTrackString}");
+            Console.WriteLine($"{drawPlayerString}");
+            Console.WriteLine();
+            Console.WriteLine($"{drawNPCString}");
+            Console.WriteLine($"   {drawTrackString}");
 
-            GetValidCharacter();
+
+            Console.ReadKey();
+
+          
+
+          //GenerateRandomDieValue();
+
+          // GetValidCharacter();
 
 
             
@@ -44,10 +59,6 @@ namespace CorePortfolio04_JeffPaltridge
             string trackLengthInput = "";
             int trackLength = 0;
             bool trackLengthExit = false;
-
-
-            
-            
 
             do
             {
@@ -70,20 +81,35 @@ namespace CorePortfolio04_JeffPaltridge
                 return trackLength;
         }
 
-        private static void DrawTrack()
+
+        private static string DrawTrack(int trackTotal)
         {
-            throw new NotImplementedException();
+            string totalTrackString = "";
+            
+            
+            for (int loopCounter = 0; loopCounter < trackTotal; loopCounter++)
+            {
+                totalTrackString = totalTrackString + "=";
+            }
+
+            return totalTrackString;
         }
 
-        private static void DrawCharacters()
+
+        private static void DrawCharacters(string drawPlayerString, string drawNPCString)
         {
-            throw new NotImplementedException();
+
+
+
+            return;
         }
+
 
         private static void GenerateRandomDieValue()
         {
             throw new NotImplementedException();
         }
+
 
         private static void GetValidCharacter()
         {
