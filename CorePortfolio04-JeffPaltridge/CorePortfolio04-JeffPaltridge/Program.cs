@@ -62,8 +62,8 @@ namespace CorePortfolio04_JeffPaltridge
                         Console.WriteLine($"You moved {playerDice} positions.");
                         Console.WriteLine($"Computer moved {npcDice} positions.");
                         Console.WriteLine();
-                        playerPadNumber = playerPadNumber + playerDice;
-                        npcPadNumber = npcPadNumber + npcDice;
+                        playerPadNumber += playerDice;
+                        npcPadNumber += npcDice;
                     }
                    
                     DrawTrack(trackTotal, trackPadNumber, trackBlankPadString);
@@ -76,7 +76,7 @@ namespace CorePortfolio04_JeffPaltridge
                         Console.Clear();
                         Console.WriteLine(" You are the Winner!");
                         Console.WriteLine();
-                        playerWinsCounter = playerWinsCounter + 1;
+                        playerWinsCounter += 1;
                     }
 
                     else if ((npcPadNumber - 3) >= trackTotal && (playerPadNumber - 3) < trackTotal)
@@ -84,7 +84,7 @@ namespace CorePortfolio04_JeffPaltridge
                         Console.Clear();
                         Console.WriteLine("Computer Wins!");
                         Console.WriteLine();
-                        npcWinsCounter = npcWinsCounter +1;
+                        npcWinsCounter += 1;
                     }
 
                     else if ((playerPadNumber-3) >= trackTotal && (npcPadNumber -3) >= trackTotal)
@@ -92,7 +92,7 @@ namespace CorePortfolio04_JeffPaltridge
                         Console.Clear();
                         Console.WriteLine("The race was a Tie!");
                         Console.WriteLine();
-                        tiesCounter = tiesCounter +1;
+                        tiesCounter += 1;
                     }
 
                     else
@@ -128,8 +128,7 @@ namespace CorePortfolio04_JeffPaltridge
             Console.WriteLine($"You Tied {tiesCounter} games.");
             Console.WriteLine();
             Console.WriteLine("Thanks for playing!");
-            Console.ReadKey();
-          
+            Console.ReadKey();         
         }
 
         private static string Unicorn_Creator()
@@ -234,7 +233,7 @@ namespace CorePortfolio04_JeffPaltridge
             
             for (int loopCounter = 0; loopCounter < trackTotal; loopCounter++)
             {
-                totalTrackString = totalTrackString + "=";
+                totalTrackString += "=";
             }
 
             drawTrackString = totalTrackString;
